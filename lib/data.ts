@@ -14,58 +14,72 @@ export const SERVICES = [
 	{
 		slug: "gp-consultation",
 		title: "GP Consultation",
-		blurb: "General practitioner consults for all ages.",
-		// image: "/services/gp-consultation.jpg",
+		blurb:
+			"General practitioner consultations for all ages, providing diagnosis and treatment for everyday health concerns. Includes check-ups, illness diagnosis, medical advice, and referrals when needed.",
 		image: "/images/services/gp-consultation-service.jpg",
 	},
 	{
 		slug: "obstetrician-&-gynaecologist-clinic",
 		title: "Obstetrician & Gynaecologist Clinic",
 		blurb:
-			"Comprehensive women’s health care, from pregnancy to wellness, delivered with compassion and expertise.",
+			"Comprehensive women\u2019s health care including pregnancy care, reproductive health, menstrual concerns, and routine gynaecological check-ups, delivered with compassion and expertise.",
 		image: "/images/services/pediatrician-service.jpg",
 	},
 	{
 		slug: "prescriptions",
 		title: "Prescriptions",
-		blurb: "Fast, accurate prescriptions and refills.",
+		blurb:
+			"Fast and accurate prescriptions and medication refills following a medical consultation, ensuring you receive the appropriate treatment for your condition.",
 		image: "/images/services/prescriptions-service.jpg",
 	},
 	{
 		slug: "specialist-physician",
 		title: "Specialist Physician Clinic",
-		blurb: "Access to specialist consultations.",
+		blurb:
+			"Access to specialist medical consultations for the diagnosis and management of more complex or ongoing health conditions.",
 		image: "/images/services/specialist-service.webp",
 	},
 	{
 		slug: "minor-surgical",
 		title: "Minor Surgical Procedures",
-		blurb: "Safe minor procedures with proper follow-up.",
+		blurb:
+			"Safe in-clinic procedures performed by qualified professionals, including incision and drainage, Jadelle and implant removal, loop removal, foreign body removal, and wound dressing.",
 		image: "/images/services/minor-surgery-service.avif",
 	},
 	{
 		slug: "family-health",
 		title: "Family Health Practice",
-		blurb: "Comprehensive, family-oriented care.",
+		blurb:
+			"Comprehensive, family-oriented healthcare services including family planning consultations and routine immunisations for children and adults.",
 		image: "/images/services/family-health-service.jpg",
 	},
 	{
 		slug: "ultrasound-scans",
 		title: "Ultrasound Scans",
-		blurb: "On-site diagnostic ultrasound imaging.",
+		blurb:
+			"On-site diagnostic ultrasound imaging including abdominal scans, pelvic scans, and Doppler scans to assist with accurate diagnosis and monitoring.",
 		image: "/images/services/ultrasound-service.jpg",
 	},
 	{
 		slug: "medical-examinations",
 		title: "Medical Examinations",
-		blurb: "Checkups, employment & insurance medicals.",
+		blurb:
+			"Medical check-ups required for travel, employment, insurance, or general health certification.",
 		image: "/images/services/medical-exams.jpg",
 	},
 	{
 		slug: "chronic-disease",
 		title: "Chronic Disease Management",
-		blurb: "Ongoing support for long-term conditions.",
+		blurb:
+			"Ongoing care and monitoring for long-term conditions such as diabetes, hypertension, HIV, asthma, and arthritis, helping patients maintain better health and quality of life.",
 		image: "/images/services/chronic-disease-service.webp",
+	},
+	{
+		slug: "laboratory-tests",
+		title: "Laboratory Tests",
+		blurb:
+			"On-site laboratory testing for accurate diagnosis and health screening, including STI screening, HIV PCR testing, full blood count, and other essential medical investigations.",
+		image: "/images/services/medical-exams.jpg",
 	},
 ];
 
