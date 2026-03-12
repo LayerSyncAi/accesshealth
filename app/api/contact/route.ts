@@ -37,7 +37,7 @@ export async function POST(req: Request) {
 			from: {
 				emailAddress: {
 					address: process.env.CONTACT_FROM!,
-					name: "Layersync Enquiry",
+					name: "Access Health Enquiry",
 				},
 			},
 			toRecipients: [

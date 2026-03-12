@@ -15,15 +15,18 @@ import { HeartPulseLoader } from "../ui/heart-pulse-loader";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
+const NAV_LINKS = [
+	{ href: "/", label: "Home" },
+	{ href: "/services", label: "Services" },
+	{ href: "/team", label: "Team" },
+	{ href: "/resources", label: "Resources" },
+	{ href: "/contact", label: "Contact" },
+];
+
 export function SiteHeader() {
 	const [open, setOpen] = useState(false);
-	const [, setLoading] = useState(false);
 	const [isDark, setIsDark] = useState(false);
 	const pathname = usePathname();
-
-	useEffect(() => setLoading(false), [pathname]);
-
-	useEffect(() => setLoading(false), [pathname]);
 
 	useEffect(() => {
 		const stored = localStorage.getItem("isDark");
@@ -39,13 +42,15 @@ export function SiteHeader() {
 		localStorage.setItem("isDark", String(isDark));
 	}, [isDark]);
 
+	const isActive = (href: string) =>
+		href === "/" ? pathname === "/" : pathname.startsWith(href);
+
 	return (
 		<header className="sticky top-0 z-50 backdrop-blur bg-white/10 border-b dark:bg-black">
 			<div className="container h-14 md:h-16 px-4 sm:px-6 flex items-center justify-between">
 				<div className="flex items-center gap-2">
 					<Link
 						href="/"
-						onClick={() => setLoading(true)}
 						className="flex items-center h-8 md:h-10"
 					>
 						{!isDark ? (
@@ -58,7 +63,6 @@ export function SiteHeader() {
 								priority
 							/>
 						) : (
-							// Access-logo-dark 2.jpg
 							<Image
 								src="/images/logo/Access-logo-dark%202.jpg"
 								alt="Access Health logo"
@@ -73,41 +77,19 @@ export function SiteHeader() {
 				</div>
 
 				<nav className="hidden md:flex gap-6 items-center text-[15px]">
-					<Link
-						href="/"
-						className="hover:opacity-80"
-						onClick={() => setLoading(true)}
-					>
-						Home
-					</Link>
-					<Link
-						href="/services"
-						className="hover:opacity-80"
-						onClick={() => setLoading(true)}
-					>
-						Services
-					</Link>
-					<Link
-						href="/team"
-						className="hover:opacity-80"
-						onClick={() => setLoading(true)}
-					>
-						Team
-					</Link>
-					<Link
-						href="/resources"
-						className="hover:opacity-80"
-						onClick={() => setLoading(true)}
-					>
-						Resources
-					</Link>
-					<Link
-						href="/contact"
-						className="hover:opacity-80"
-						onClick={() => setLoading(true)}
-					>
-						Contact
-					</Link>
+					{NAV_LINKS.map(({ href, label }) => (
+						<Link
+							key={href}
+							href={href}
+							className={`hover:opacity-80 transition-colors ${
+								isActive(href)
+									? "font-semibold text-[color:var(--brand-blue)] dark:text-[#42d9c8]"
+									: ""
+							}`}
+						>
+							{label}
+						</Link>
+					))}
 					<Button
 						variant="ghost"
 						size="icon"
@@ -132,51 +114,20 @@ export function SiteHeader() {
 					<SheetContent side="right" className="pt-12">
 						<SheetTitle className="sr-only">Main Navigation</SheetTitle>
 						<div className="flex flex-col items-center text-center gap-5 text-lg">
-							<Link
-								href="/"
-								onClick={() => {
-									setOpen(false);
-									setLoading(true);
-								}}
-							>
-								Home
-							</Link>
-							<Link
-								href="/services"
-								onClick={() => {
-									setOpen(false);
-									setLoading(true);
-								}}
-							>
-								Services
-							</Link>
-							<Link
-								href="/team"
-								onClick={() => {
-									setOpen(false);
-									setLoading(true);
-								}}
-							>
-								Team
-							</Link>
-							<Link
-								href="/resources"
-								onClick={() => {
-									setOpen(false);
-									setLoading(true);
-								}}
-							>
-								Resources
-							</Link>
-							<Link
-								href="/contact"
-								onClick={() => {
-									setOpen(false);
-									setLoading(true);
-								}}
-							>
-								Contact
-							</Link>
+							{NAV_LINKS.map(({ href, label }) => (
+								<Link
+									key={href}
+									href={href}
+									onClick={() => setOpen(false)}
+									className={
+										isActive(href)
+											? "font-semibold text-[color:var(--brand-blue)] dark:text-[#42d9c8]"
+											: ""
+									}
+								>
+									{label}
+								</Link>
+							))}
 							<Button
 								variant="ghost"
 								size="icon"

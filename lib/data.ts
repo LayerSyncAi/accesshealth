@@ -1,5 +1,15 @@
 import type { LucideIcon } from "lucide-react";
 
+export const CONTACT_INFO = {
+	address: "Shop 22 Mini Mall, Hogerty Hill Centre, William Powlett Dr, Harare",
+	phone: "+263 (0) 78 345 8985",
+	phoneHref: "tel:+263783458985",
+	email: "accesshealthclinics@gmail.com",
+	emailHref: "mailto:accesshealthclinics@gmail.com",
+	whatsapp: "https://wa.me/263783458985",
+	hours: "Mon\u2013Sun 09:00\u201318:00",
+} as const;
+
 export const SERVICES = [
 	{
 		slug: "gp-consultation",
@@ -105,7 +115,7 @@ export const TEAM: TeamMember[] = [
 		bio: "Expert in aerospace and internal medicine.",
 	},
 	{
-		serviceSlug: "obstretician-&-gynaecologist-clinic",
+		serviceSlug: "obstetrician-&-gynaecologist-clinic",
 		name: "Dr. Madombi S.W.",
 		bio: "Dedicated to compassionate women's health care.",
 		// photoUrl: "/images/services/specialist-service.webp",
