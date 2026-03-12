@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, Sun, Moon, MoonStar } from "lucide-react";
+import { Calendar, Menu, Sun, Moon, MoonStar } from "lucide-react";
 import {
 	Sheet,
 	SheetContent,
@@ -102,6 +102,19 @@ export function SiteHeader() {
 							<MoonStar className="size-6 text-indigo-300" />
 						)}
 					</Button>
+					<Button
+						asChild
+						className="btn-pill rounded-full bg-[color:var(--brand-blue)] text-white hover:bg-[color:var(--brand-blue)]/90 dark:bg-[#42d9c8] dark:text-black dark:hover:bg-[#42d9c8]/90"
+					>
+						<a
+							href="https://syncus.layersyncai.com/book/access-health"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Calendar className="size-4" />
+							Book Now
+						</a>
+					</Button>
 				</nav>
 
 				{/* Mobile */}
@@ -139,6 +152,20 @@ export function SiteHeader() {
 								) : (
 									<Moon className="size-4" />
 								)}
+							</Button>
+							<Button
+								asChild
+								className="btn-pill rounded-full bg-[color:var(--brand-blue)] text-white hover:bg-[color:var(--brand-blue)]/90 dark:bg-[#42d9c8] dark:text-black dark:hover:bg-[#42d9c8]/90"
+							>
+								<a
+									href="https://syncus.layersyncai.com/book/access-health"
+									target="_blank"
+									rel="noopener noreferrer"
+									onClick={() => setOpen(false)}
+								>
+									<Calendar className="size-4" />
+									Book Now
+								</a>
 							</Button>
 						</div>
 					</SheetContent>
