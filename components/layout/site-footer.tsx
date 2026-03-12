@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { CONTACT_INFO } from "@/lib/data";
 
 export function SiteFooter() {
 	const [isDark, setIsDark] = useState(false);
@@ -51,16 +52,22 @@ export function SiteFooter() {
 
 				<div>
 					<h4 className="font-semibold">Contact</h4>
-					<p className="mt-3 text-sm text-muted-foreground">
-						Shop 22 Mini Mall, Hogerty Hill Centre,
-						<br /> William Powlett Dr, Harare
-						<br />
-						+263 (0) 78 345 8985
-						<br />
-						accesshealthclinics@gmail.com
-						<br />
-						<strong>Hours:</strong> Mon–Sun 09:00–18:00
-					</p>
+					<div className="mt-3 space-y-1 text-sm text-muted-foreground">
+						<p>{CONTACT_INFO.address}</p>
+						<p>
+							<a href={CONTACT_INFO.phoneHref} className="hover:underline">
+								{CONTACT_INFO.phone}
+							</a>
+						</p>
+						<p>
+							<a href={CONTACT_INFO.emailHref} className="hover:underline">
+								{CONTACT_INFO.email}
+							</a>
+						</p>
+						<p>
+							<strong>Hours:</strong> {CONTACT_INFO.hours}
+						</p>
+					</div>
 				</div>
 
 				<div>
@@ -90,7 +97,7 @@ export function SiteFooter() {
 				</div>
 			</div>
 			<div className="pb-8 text-center text-xs text-muted-foreground">
-				© {new Date().getFullYear()} Access Health. All rights reserved.
+				&copy; {new Date().getFullYear()} Access Health. All rights reserved.
 			</div>
 		</footer>
 	);
