@@ -67,12 +67,7 @@ export function Hero() {
 				</div>
 				<div>
 					<div className="card p-3">
-						<ImageSlot
-							alt="Access Health Clinic reception"
-							src="/images/bento-gallery/IMG_9309.JPEG"
-							ratio="wide"
-							priority
-						/>
+						<ImageSlot alt="Clinic reception" ratio="wide" priority />
 					</div>
 				</div>
 			</div>
