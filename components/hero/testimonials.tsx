@@ -20,7 +20,7 @@ export function Testimonials() {
 						Real experiences from our community.
 					</p>
 				</div>
-				<Carousel opts={{ loop: true }} plugins={[Autoplay({ delay: 4000 })]}>
+				<Carousel opts={{ loop: true }} plugins={[Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })]}>
 					<CarouselContent>
 						{TESTIMONIALS.map((t, i) => (
 							<CarouselItem key={i}>

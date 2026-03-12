@@ -14,7 +14,7 @@ export function ServicesCarousel() {
 		<Carousel
 			className="w-full py-10"
 			opts={{ loop: true }}
-			plugins={[Autoplay({ delay: 2000 })]}
+			plugins={[Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true })]}
 		>
 			<CarouselContent>
 				{SERVICES.map((s) => (
